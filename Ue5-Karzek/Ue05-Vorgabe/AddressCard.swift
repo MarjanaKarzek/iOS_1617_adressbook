@@ -22,10 +22,6 @@ class AddressCard: NSObject, NSCoding {
         super.init()
     }
     
-    /*init(lastname: String){
-        self.lastname = lastname
-    }*/
-    
     init(firstname: String, lastname: String, street: String, nr: Int, postcode: Int, city: String){
         self.firstname = firstname
         self.lastname = lastname
@@ -78,7 +74,6 @@ class AddressCard: NSObject, NSCoding {
         coder.encode(friends, forKey: "friends")
     }
     
-    //Eine der Klassen erbt von Equatable --> nicht nochmal einbinden
     static func == (left: AddressCard, right: AddressCard) -> Bool {
         return left.lastname == right.lastname
     }

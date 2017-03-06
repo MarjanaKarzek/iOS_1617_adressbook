@@ -20,11 +20,6 @@ class DetailTableViewController: UITableViewController {
     
     func configureView() {
         // Update the user interface for the detail item.
-        /*if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }*/
     }
     
     override func viewDidLoad() {
@@ -57,14 +52,12 @@ class DetailTableViewController: UITableViewController {
         switch(section){
             case 0: return 4
             case 1: if(addressCard?.friends.count == 0){
-                        //print("Friends = 2")
                         return 2
                     }
                     else{
                         return (addressCard?.friends.count ?? 1)+1
                     }
             case 2: if(addressCard?.hobbies.count == 0){
-                        //print("Hobbies = 2")
                         return 2
                     }
                     else{
@@ -118,22 +111,6 @@ class DetailTableViewController: UITableViewController {
         }
         return cell
     }
-    
-    /*Funktioniert nicht --> tableView weiterreichen an EditableCell
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        if let card = addressCard{
-            switch (indexPath.section){
-                case 1: if(indexPath.row != card.friends.count + 1){
-                    self.tableView.reloadData()
-                }
-                case 2: if(indexPath.row != card.hobbies.count + 1){
-                    self.tableView.reloadData()
-                }
-                default: break
-            }
-        }
-    }*/
-
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

@@ -21,7 +21,7 @@ class AddressBook: NSObject, NSCoding{
     
     func remove(card: AddressCard){
         if let index = list.index(of: card){
-            //alle Friends löschen
+            //delete all friends
             for element in list {
                 if (element.friends.index(of: card) != nil){
                     element.remove(friend: card)
@@ -45,10 +45,6 @@ class AddressBook: NSObject, NSCoding{
             }
         }
         return index
-        
-        /*Das funktioniert leider nicht
-         let index = list.index(of: AddressCard(lastname: lastname)) ?? -1
-         return index*/
     }
     
     required init?(coder:NSCoder){
